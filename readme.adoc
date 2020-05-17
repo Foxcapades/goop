@@ -5,21 +5,20 @@ Option types for Go's basic builtin types.
 
 '''
 
+.cmd/example/main.go
 [source,go]
 ----
-package main
-
-import (
-  "fmt"
-  "github.com/Foxcapades/goop/v0/pkg/optional"
-)
-
 func main() {
-  optional.NewInt(3).
-    MapToByte(func(i int) byte { return byte(i) }).
-    MapToUntyped(func(b byte) interface{} {
-      fmt.Println(fmt.Println(b))
-      return nil
-    })
+  fmt.Println(option.NewBool(true).
+    ForceMapToInt(func(b bool) int {
+      if b {
+        return 5
+      }
+      return 10
+    }).
+    ForceMapToString(strconv.Itoa).
+    ForceMapToUntyped(func(s string) interface{} { return NewTest(s) }).
+    MapToNillableString(func(t interface{}) *string { return nil }).
+    Or("15"))
 }
 ----
