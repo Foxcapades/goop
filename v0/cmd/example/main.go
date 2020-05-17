@@ -7,10 +7,12 @@ import (
 	"github.com/Foxcapades/goop/v0/pkg/option"
 )
 
+// NewTest creates a new Test struct with the given string.
 func NewTest(val string) Test {
 	return Test{val}
 }
 
+// Test struct.
 type Test struct {
 	Value string
 }
