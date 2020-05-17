@@ -1,0 +1,25 @@
+= Go Options
+:source-highlighter: pygments
+
+Option types for Go's basic builtin types.
+
+'''
+
+[source,go]
+----
+package main
+
+import (
+  "fmt"
+  "github.com/Foxcapades/goop/v0/pkg/optional"
+)
+
+func main() {
+  optional.NewInt(3).
+    MapToByte(func(i int) byte { return byte(i) }).
+    MapToUntyped(func(b byte) interface{} {
+      fmt.Println(fmt.Println(b))
+      return nil
+    })
+}
+----
