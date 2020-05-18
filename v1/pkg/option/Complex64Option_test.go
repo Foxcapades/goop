@@ -5,7 +5,7 @@ import (
 	"errors"
 	"testing"
 
-	. "github.com/Foxcapades/goop/v0/pkg/option"
+	. "github.com/Foxcapades/goop/v1/pkg/option"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

@@ -3,14 +3,14 @@
 package main
 
 import (
-	"github.com/Foxcapades/goop/v0/internal/gen"
+	"github.com/Foxcapades/goop/v1/internal/gen"
 	"html/template"
 	"os"
 	"time"
 )
 
 const (
-	filePrefix = "v0/pkg/option/"
+	filePrefix = "v1/pkg/option/"
 	fileSuffix = "Option.go"
 )
 

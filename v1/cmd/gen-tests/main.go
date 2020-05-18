@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	filePrefix = "v0/pkg/option/"
+	filePrefix = "v1/pkg/option/"
 	fileSuffix = "Option_test.go"
 )
 
@@ -34,7 +34,7 @@ type loopData struct {
 
 func main() {
 
-	tpl := template.Must(template.ParseGlob("v0/cmd/gen-tests/tpl/*"))
+	tpl := template.Must(template.ParseGlob("v1/cmd/gen-tests/tpl/*"))
 	now := time.Now()
 
 	// list of types to generate for

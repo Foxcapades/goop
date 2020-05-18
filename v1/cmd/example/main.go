@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/Foxcapades/goop/v0/pkg/option"
+	"github.com/Foxcapades/goop/v1/pkg/option"
 )
 
 // NewTest creates a new Test struct with the given string.
