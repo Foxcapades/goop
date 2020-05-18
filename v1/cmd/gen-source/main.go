@@ -40,7 +40,7 @@ func main() {
 	}
 
 	tpl := template.Must(template.New("").Parse(gen.Template))
-	now := time.Now()
+	now := time.Now().Format(time.RFC3339Nano)
 
 	for Type, Name := range types {
 
@@ -55,7 +55,7 @@ func main() {
 		}
 
 		check(tpl.Execute(file, struct {
-			Time       time.Time
+			Time       string
 			Type       string
 			Name       string
 			Alternates map[string]string

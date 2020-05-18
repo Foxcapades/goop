@@ -1,8 +1,9 @@
 package gen
 
 // Template defines the structure for the generated option type files.
-const Template = `// Package option generated @ {{ .Time }}
-package option
+const Template = `package option
+
+/* Generated @ {{ .Time }} */
 
 // New{{ .Name }} creates a new {{ .Type }} option wrapping the given value.
 {{ if eq .Type "interface{}" }}//
@@ -131,10 +132,10 @@ func (o {{ $.Name }}) MapTo{{ $AltName }}(fn func({{ $.Type }}) ({{ $AltType }},
 
 // ForceMapTo{{ $AltName }} either returns an empty option of {{ $AltType }}
 // if this option is empty, or returns a new option of
-// {{ $AltType }} wrapping the result of the given function.
+// {{ $AltType }} wrapping the result of the given function.{{ if eq $AltType "interface{}" }}
 //
 // Since "interface{}" is a nillable type, the resulting
-// option will be empty if the return value was nil.
+// option will be empty if the return value was nil.{{ end }}
 func (o {{ $.Name }}) ForceMapTo{{ $AltName }}(fn func({{ $.Type }}) {{ $AltType }}) {{ $AltName }} {
 	if o.value == nil {
 		return NewEmpty{{ $AltName }}()
