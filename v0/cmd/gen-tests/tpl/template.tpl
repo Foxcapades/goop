@@ -2,10 +2,10 @@
 package option_test
 
 import (
-"testing"
+	"testing"
 
-. "github.com/Foxcapades/goop/v0/pkg/option"
-. "github.com/smartystreets/goconvey/convey"
+	. "github.com/Foxcapades/goop/v0/pkg/option"
+	. "github.com/smartystreets/goconvey/convey"
 )
 {{ template "static" $ }}
 {{ end }}

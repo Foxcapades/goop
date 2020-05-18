@@ -65,8 +65,9 @@ func Test{{ .Name }}_OrPanicWith(t *testing.T) {
 		So(test1.OrPanicWith(func() interface{} { return "panic!" }), ShouldEqual, {{ .Static.DummyValue }})
 
 		test2 := NewEmpty{{ .Name }}()
-		So(func () {
-			test2.OrPanicWith(func() interface{} { return "test value" })}, ShouldPanicWith, "test value")
+		So(func() {
+			test2.OrPanicWith(func() interface{} { return "test value" })
+		}, ShouldPanicWith, "test value")
 	})
 }
 
@@ -79,7 +80,8 @@ func Test{{ .Name }}_MapToNillable(t *testing.T) {
 		So(test2.MapToNillable(func(b {{ .Type }}) *{{ .Type }} { return nil }).IsNil(), ShouldBeTrue)
 
 		test3 := NewEmpty{{ .Name }}()
-		So(func() {test3.MapToNillable(func(b {{ .Type }}) *{{ .Type }} { panic("foo") }).IsNil()}, ShouldNotPanic)
+		So(func() {
+			test3.MapToNillable(func(b {{ .Type }}) *{{ .Type }} { panic("foo") }).IsNil()
+		}, ShouldNotPanic)
 	})
-}
-{{ end }}
+}{{ end }}

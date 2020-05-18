@@ -1,11 +1,11 @@
-// Package option_test generated @ 2020-05-17 20:21:45.156432072 -0400 EDT m=+0.000834264
+// Package option_test generated @ 2020-05-17 20:31:35.070899067 -0400 EDT m=+0.000888110
 package option_test
 
 import (
-"testing"
+	"testing"
 
-. "github.com/Foxcapades/goop/v0/pkg/option"
-. "github.com/smartystreets/goconvey/convey"
+	. "github.com/Foxcapades/goop/v0/pkg/option"
+	. "github.com/smartystreets/goconvey/convey"
 )
 
 func TestNewComplex128(t *testing.T) {
@@ -74,8 +74,9 @@ func TestComplex128_OrPanicWith(t *testing.T) {
 		So(test1.OrPanicWith(func() interface{} { return "panic!" }), ShouldEqual, 58.98)
 
 		test2 := NewEmptyComplex128()
-		So(func () {
-			test2.OrPanicWith(func() interface{} { return "test value" })}, ShouldPanicWith, "test value")
+		So(func() {
+			test2.OrPanicWith(func() interface{} { return "test value" })
+		}, ShouldPanicWith, "test value")
 	})
 }
 
@@ -88,7 +89,8 @@ func TestComplex128_MapToNillable(t *testing.T) {
 		So(test2.MapToNillable(func(b complex128) *complex128 { return nil }).IsNil(), ShouldBeTrue)
 
 		test3 := NewEmptyComplex128()
-		So(func() {test3.MapToNillable(func(b complex128) *complex128 { panic("foo") }).IsNil()}, ShouldNotPanic)
+		So(func() {
+			test3.MapToNillable(func(b complex128) *complex128 { panic("foo") }).IsNil()
+		}, ShouldNotPanic)
 	})
 }
-
