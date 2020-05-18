@@ -1,6 +1,9 @@
 = Go Options
 :source-highlighter: pygments
 
+image::https://goreportcard.com/badge/github.com/Foxcapades/goop[caption="Go Report Card", link="https://goreportcard.com/report/github.com/Foxcapades/goop"]
+image::
+
 Option types for Go's basic builtin types.
 
 '''

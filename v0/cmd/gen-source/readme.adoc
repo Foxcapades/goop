@@ -1,0 +1,5 @@
+= Generate Library Source
+
+Run whenever there are any code changes, bug fixes new features, etc...
+
+Tests are not regenerated at the same time to check for backwards compatibility.

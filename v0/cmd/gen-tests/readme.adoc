@@ -1,0 +1,10 @@
+= Generate Library Tests
+
+Run only in these circumstances:
+
+1. A major version bump, backwards compatibility is not a concern.
+2. A minor version bump, only _**AFTER**_ running the existing tests against the
+   regenerated code.
+3. A patch version bump,  only _**AFTER**_ running the existing tests against
+   the regenerated code and only if it is necessary to add a minor tweak to
+   check for regressions.
